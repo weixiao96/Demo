@@ -1,0 +1,55 @@
+﻿{
+    "List": [
+        {
+          id:1,
+          info:"找结婚对象 已验证",
+          info1:'身份 学历',
+          age:'26',
+          height:'168',
+          constellation:'白羊',
+          income:'50w-100w',
+          Country:'Candice',
+          img:'./../../static/images/ListImg.png',
+          img1:'./../../static/images/icon-xin.png',
+          images:'./../../static/images/ListIcon.png',
+          images1:'./../../static/images/ListIcon1.png',
+          introduce:'上海 · 文化传媒 · 其他',
+          Motto:'崇尚高端品质生活  想和你相约旅行',
+          distance:'2.3'
+        },
+        {
+          id:2,
+          info:"找恋爱对象 已验证",
+          info1:'身份 学历',
+          age:'29',
+          height:'185',
+          constellation:'水瓶',
+          income:'20w-40w',
+          Country:'luke jones',
+          img:'./../../static/images/ListImg1.png',
+          img1:'./../../static/images/icon-xin.png',
+          images:'./../../static/images/ListIcon.png',
+          images1:'./../../static/images/ListIcon1.png',
+          introduce:'上海 · 金融 · 其他',
+          Motto:'希望你真诚、自信、积极、阳光',
+          distance:'4.8'
+        },
+        {
+          id:3,
+          info:"暂不想恋爱 已验证",
+          info1:'身份 学历',
+          age:'26',
+          height:'175',
+          constellation:'摩羯',
+          income:'80w-100w',
+          Country:'george',
+          img:'./../../static/images/ListImg2.png',
+          img1:'./../../static/images/icon-xin.png',
+          images:'./../../static/images/ListIcon.png',
+          images1:'./../../static/images/ListIcon1.png',
+          introduce:'上海 · 服装设计',
+          Motto:'崇尚高端品质生活  想和你相约旅行',
+          distance:'3.1'
+        }
+    ]
+}
