@@ -833,3 +833,212 @@ input{
 .OpenConten p:last-child{
 	border: none;
 }
+.Close{
+  position: fixed;
+  top: .3rem;
+  right: .3rem;
+  width: .4rem;
+  height: .4rem;
+  z-index: 1;
+  opacity: .8;
+}
+.Close img{
+  width: 100%;
+  height: 100%;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to{
+  transform: translateX(-10px);
+  opacity: 0;
+}
+.DetailsContent{
+  padding: .3rem;
+  font-size: 0;
+}
+.DetailsContent p{
+  line-height: .5rem;
+  font-size: .26rem;
+  color: #999999;
+}
+.LabelSpan{
+  padding: 0 .2rem;
+  min-width: 1rem;
+  display:inline-block;
+  font-size: .26rem;
+  height: .54rem;
+  line-height: .5rem;
+  border:1px solid #c7c9cf;
+  border-radius: .1rem;
+  color: #999999;
+  margin: .1rem;
+}
+.contact{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: .9rem;
+  line-height: .9rem;
+  background: #eef2f5;
+  width: 100%;
+  padding: 0 .3rem;
+}
+.contactIconf{
+  display: inline-block;
+  width: .42rem;
+  height: .42rem;
+  vertical-align: middle;
+  font-size: 0;
+  margin-right: .5rem;
+}
+.contactIconf img{
+  width: 100%;
+  height: 100%;
+}
+.contactIconf.fr{
+  margin-top: .28rem;
+  margin-right: 0;
+}
+.HeadpPortraitBg{
+  position: relative;
+  height: 4rem;
+  background: #000000;
+  overflow: hidden;
+}
+.CharHeadpPortrait img{
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+.CharInfo{
+  width: 100%;
+  height: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+}
+.HeadPortrait{
+  border-radius: 50px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #FFF;
+  overflow: hidden;
+}
+.CharName{
+  height: .4rem;
+  line-height: .4rem;
+  width: 100%;
+  text-align: center;
+  margin-top: .2rem;
+}
+.region{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.charInterface{
+  background: #f0f3f5;
+  padding: .2rem;
+}
+.SendOutBox{
+ height: .8rem;
+ width: 100%;
+ font-size: 0;
+}
+.charPhoto{
+  display: inline-block;
+  width: .8rem;
+  height:.8rem;
+  text-align: center;
+  line-height: .8rem;
+}
+.charPhoto img{
+  display: inline-block;
+  width: .43rem;
+  height: .34rem;
+  vertical-align: middle;
+}
+.SendOut_input{
+  display: inline-block;
+  width: calc(100% - 2.3rem);
+  height:.8rem;
+  padding: 0 .2rem;
+  vertical-align: middle;
+  border: none;
+  color: #444;
+  font-size: .24rem;
+
+}
+.SendOut_but{
+  display: inline-block;
+  width: 1.5rem;
+  height: .8rem;
+  background: #cea972;
+  font-size: .32rem;
+  color: #FFFFFF;
+  vertical-align: middle;
+}
+/* 聊天 */
+.reply, .ask {
+    padding-bottom: .3rem;
+}
+.msg {
+    position: relative;
+}
+.msg>img {
+    width: .8rem;
+    float: left;
+    border-radius: 5px;
+}
+.reply .msg .name {
+    position: absolute;
+    font-size: .24rem;
+    color: #999;
+    top: -.1rem;
+    left: .9rem;
+}
+.time {
+    font-size: .24rem;
+    color: #999;
+    margin-bottom: .3rem;
+    text-align: center;
+}
+.ask .msg img, .ask .msg p, .ask .msg {
+    float: right;
+}
+.msg>img {
+    width: .8rem;
+    float: left;
+}
+.msg>p {
+    float: left;
+    margin: 0 .4rem;
+    padding: .25rem .25rem;
+    color: #fff;
+    font-size: .24rem;
+    position: relative;
+    border-radius: .2rem;
+    max-width: 5rem;
+    min-height: .6rem;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    background: #cea972;
+}
+.reply .msg>p{
+    background: #fff;
+    color: #333333;
+}
+.reply:after, .ask:after, .msg:after {
+    content: "";
+    clear: both;
+    display: table;
+}

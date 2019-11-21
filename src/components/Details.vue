@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="DetaisBox" :class="{active:Active}" :style="{display:state}">
+    <div class="DetaisBox" v-if="show">
       <div class="infoBg">
-       <img src="./../../static/images/DetailsBg.png" />
+        <img src="./../../static/images/DetailsBg.png" />
       </div>
       <div class="infoText">
-          <router-link to="/Details">
-            <p class="Country"><span>candice</span> <img src="./../../static/images/ListIcon.png" /><img src="./../../static/images/ListIcon1.png" /></p>
-            <p class="introduce">上海 · 文化传媒 · 其他</p>
-            <div class="Label">找恋爱对象</div>
-          </router-link>
+        <router-link to="/Details">
+          <p class="Country"><span>candice</span> <img src="./../../static/images/ListIcon.png" /><img src="./../../static/images/ListIcon1.png" /></p>
+          <p class="introduce">上海 · 文化传媒 · 其他</p>
+          <div class="Label">找恋爱对象</div>
+        </router-link>
       </div>
       <div class="infoContent">
         <ul class="infoUl infoUl01">
@@ -41,7 +41,7 @@
             <dl class="news">
               <dt class="info">
                 <div class="pic">
-                  <img src="./../../static/images/HeadPortrait.png"  />
+                  <img src="./../../static/images/HeadPortrait.png" />
                 </div>
                 <div class="Nickname">
                   <p class="name">gougougogou</p>
@@ -54,12 +54,12 @@
                 </div>
                 <div class="content-img">
                   <yd-lightbox :num="list.length">
-                      <yd-lightbox-img v-for="item in list" :src="item.src" :original="item.original" v-bind:key="item.id"></yd-lightbox-img>
-                      <yd-lightbox-txt>
-                          <div slot="content">
-                              <p>心是任何想法都能产生的源泉，这就包含了，对和错两个方面想法。心本体会陷入到对自己本体不能理解的状态中，因为心能产生任何想法，不能分出对错，不能分出自己。</p>
-                          </div>
-                      </yd-lightbox-txt>
+                    <yd-lightbox-img v-for="item in list" :src="item.src" :original="item.original" v-bind:key="item.id"></yd-lightbox-img>
+                    <yd-lightbox-txt>
+                      <div slot="content">
+                        <p>心是任何想法都能产生的源泉，这就包含了，对和错两个方面想法。心本体会陷入到对自己本体不能理解的状态中，因为心能产生任何想法，不能分出对错，不能分出自己。</p>
+                      </div>
+                    </yd-lightbox-txt>
                   </yd-lightbox>
                 </div>
               </dd>
@@ -94,29 +94,29 @@
               371324199*********
             </div>
           </li>
-          <yd-accordion class="info-yd-accordion" >
-              <yd-accordion-item title="学历">
-                <div slot="icon"  class="info-yd-accordion-icon"><span><img src="./../../static/images/info-Iconf02.png" /></span></div>
-                <div slot="txt" class="targetBut" style=";">已认证</div>
-                  <div class="OpenConten">
-                      <p>国内/北京大学</p>
-                      <p>国外/University of Virginia</p>
-                  </div>
-              </yd-accordion-item>
-              <yd-accordion-item title="房">
-                <div slot="icon"  class="info-yd-accordion-icon"><span><img src="./../../static/images/info-Iconf03.png" /></span></div>
-                <div slot="txt" class="targetBut" style=";">1套</div>
-                  <div class="OpenConten">
-                      <p>上海/2套</p>
-                  </div>
-              </yd-accordion-item>
-              <yd-accordion-item title="车">
-                <div slot="icon"  class="info-yd-accordion-icon"><span><img src="./../../static/images/info-Iconf04.png" /></span></div>
-                <div slot="txt" class="targetBut" style=";">1辆</div>
-                  <div class="OpenConten">
-                      <p>上海/2辆</p>
-                  </div>
-              </yd-accordion-item>
+          <yd-accordion class="info-yd-accordion">
+            <yd-accordion-item title="学历">
+              <div slot="icon" class="info-yd-accordion-icon"><span><img src="./../../static/images/info-Iconf02.png" /></span></div>
+              <div slot="txt" class="targetBut" style=";">已认证</div>
+              <div class="OpenConten">
+                <p>国内/北京大学</p>
+                <p>国外/University of Virginia</p>
+              </div>
+            </yd-accordion-item>
+            <yd-accordion-item title="房">
+              <div slot="icon" class="info-yd-accordion-icon"><span><img src="./../../static/images/info-Iconf03.png" /></span></div>
+              <div slot="txt" class="targetBut" style=";">1套</div>
+              <div class="OpenConten">
+                <p>上海/2套</p>
+              </div>
+            </yd-accordion-item>
+            <yd-accordion-item title="车">
+              <div slot="icon" class="info-yd-accordion-icon"><span><img src="./../../static/images/info-Iconf04.png" /></span></div>
+              <div slot="txt" class="targetBut" style=";">1辆</div>
+              <div class="OpenConten">
+                <p>上海/2辆</p>
+              </div>
+            </yd-accordion-item>
           </yd-accordion>
         </div>
         <div class="DividerBg"></div>
@@ -176,7 +176,7 @@
       </div>
       <!-- 联系 漂浮 -->
       <div class="contact">
-        <span @click="chat" class="contactIconf">
+        <span @click="show = !show" class="contactIconf">
           <img src="./../../static/images/detailsIconf1.png" />
         </span>
         <span class="contactIconf">
@@ -188,103 +188,132 @@
       </div>
     </div>
     <!-- 聊天界面 -->
-    <div class="chatBox">
-        111111111111111111
-    </div>
+    <transition name="slide-fade" @before-enter="beforeEnter">
+      <div v-if="!show" class="chatBox" :style="{height: fullHeight + 'px'}">
+        <!-- 按钮 关闭 -->
+        <div class="Close" @click="show = !show">
+          <img src="../../static/images/Close.png" />
+        </div>
+        <div ref="HeadpPortraitBg" class="HeadpPortraitBg">
+          <div class="CharHeadpPortrait">
+            <img src="../../static/images/DetailsBg.png" />
+          </div>
+          <div class="CharInfo">
+            <div class='HeadPortrait'>
+              <img src="../../static/images/DetailsBg.png" />
+            </div>
+            <p class="CharName">Miro Badev</p>
+            <p class="region">mirobadev@gmail.com</p>
+          </div>
+        </div>
+        <div class="charInterface" :style="{height:charInterfaceH + 'px'}">
+          <div   v-for="(obj,index) in Message">
+            <div v-if="obj.sign=='ni'" class="reply">
+              <div class="time">{{obj.time}}</div>
+              <div class="msg">
+                <img src="../../static/images/DetailsBg.png" alt="">
+                <p>
+                  {{obj.content}}
+                </p>
+              </div>
+            </div>
+            <div v-else class="ask">
+              <div class="time">{{obj.time}}</div>
+              <div class="msg">
+                <img src="../../static/images/DetailsBg.png" alt="">
+                <p>
+                   {{obj.content}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ref="SendOut" class="SendOutBox">
+          <span class="charPhoto">
+            <img src="../../static/images/char_Photo.png" />
+          </span>
+          <input type="text" placeholder="你想说什么" v-model="SendOutContent" class="SendOut_input" />
+          <button @click="SendOut_but" class="SendOut_but">发送</button>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
-export default {
-  data () {
-    return {
-      Active:false,
-      state:'block',
-      list: [
-        {id:'1',src: './../../static/images/img.png', original: './../../static/images/img.png'},
-        {id:'2',src: './../../static/images/img.png', original: './../../static/images/img.png'},
-        {id:'3',src: './../../static/images/img.png', original: './../../static/images/img.png'}
-      ]
-    }
-  },
-  created: function() {//在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图
+  export default {
+    data() {
+      return {
+        show: true,
+        fullHeight: document.documentElement.clientHeight,
+        infoHeight: '',
+        charInterfaceH: '',
+        list: [{
+            id: '1',
+            src: './../../static/images/img.png',
+            original: './../../static/images/img.png'
+          },
+          {
+            id: '2',
+            src: './../../static/images/img.png',
+            original: './../../static/images/img.png'
+          },
+          {
+            id: '3',
+            src: './../../static/images/img.png',
+            original: './../../static/images/img.png'
+          }
+        ],
+        Message:[
+          {
+            id:1,
+            sign:'ni',
+            content:'你好',
+            time:'11/21 14:59',
+          },
+          {
+            id:2,
+            sign:'wo',
+            content:'你好ya',
+            time:'11/21 14:59',
+          }
+        ],
+        SendOutContent:''
+      }
+    },
+    created: function() { //在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图
 
-  },
-  mounted(){//在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
-
-  },
-  methods: {
-    chat:function(){
-      var _this = this
-      _this.Active = true,
-      setTimeout(function(){
-      console.log("5555")
-      _this.state = 'none'
-      },500)
+    },
+    mounted() { //在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
+    },
+    methods: {
+      beforeEnter: function(el) {
+        let _this = this
+        setTimeout(function() {
+          _this.infoHeight = _this.$refs.HeadpPortraitBg.offsetHeight; //聊天界面高度
+          _this.SendOutHeight = _this.$refs.SendOut.offsetHeight; //发送操作高度
+          _this.charInterfaceH = _this.fullHeight - _this.infoHeight - _this.SendOutHeight
+        }, 100);
+      },
+      SendOut_but:function(){
+        if(this.SendOutContent == ''){
+          this.$dialog.toast({
+              mes: '请输入内容',
+              icon: 'error',
+              timeout: 1000
+          });
+        }else{
+          let data = {
+            sign:'wo',
+            content:this.SendOutContent,
+            time:'11/21 14:59'
+          }
+          this.Message.push(data)
+          this.SendOutContent = ''
+        }
+      }
     }
   }
-}
 </script>
 <style scoped>
-body{
-  /*background-color: #f8f8f8;*/
-}
-.DetaisBox.active
-{
-  transition:opacity 0.5s;
- -moz-transition:opacity 0.5s; /* Firefox 4 */
- -webkit-transition:opacity 0.5s; /* Safari and Chrome */
- -o-transition:opacity 0.5s; /* Opera */
- opacity: 0;
- display: none;
-}
-.DetaisBox.active{
 
-}
-.DetailsContent{
-  padding: .3rem;
-  font-size: 0;
-}
-.DetailsContent p{
-  line-height: .5rem;
-  font-size: .26rem;
-  color: #999999;
-}
-.LabelSpan{
-  padding: 0 .2rem;
-  min-width: 1rem;
-  display:inline-block;
-  font-size: .26rem;
-  height: .54rem;
-  line-height: .5rem;
-  border:1px solid #c7c9cf;
-  border-radius: .1rem;
-  color: #999999;
-  margin: .1rem;
-}
-.contact{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: .9rem;
-  line-height: .9rem;
-  background: #eef2f5;
-  width: 100%;
-  padding: 0 .3rem;
-}
-.contactIconf{
-  display: inline-block;
-  width: .42rem;
-  height: .42rem;
-  vertical-align: middle;
-  font-size: 0;
-  margin-right: .5rem;
-}
-.contactIconf img{
-  width: 100%;
-  height: 100%;
-}
-.contactIconf.fr{
-  margin-top: .28rem;
-  margin-right: 0;
-}
 </style>

@@ -10,7 +10,6 @@ import Authentication from '@/components/Authentication'
 import news from '@/components/news'
 import Gender from '@/components/Gender'
 import find from '@/components/find'
-
 Vue.use(Router)
 export default new Router({
   routes: [
