@@ -10,6 +10,7 @@ import Authentication from '@/components/Authentication'
 import news from '@/components/news'
 import Gender from '@/components/Gender'
 import find from '@/components/find'
+import dynamic from '@/components/dynamic'
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -58,6 +59,10 @@ export default new Router({
       path: '/find',
       name: 'find',
       component: find
+    },{
+      path: '/dynamic',
+      name: 'dynamic',
+      component: dynamic
     }
 
   ]

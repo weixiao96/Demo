@@ -3,12 +3,14 @@
     <yd-navbar title="发现"></yd-navbar>
     <div class="find-Ul">
       <li class="find-Li">
-        <div class="find-img">
-          <img src="./../../static/images/findImg.png" />
-        </div>
-        <div class="findText">
-          线下活动
-        </div>
+        <router-link :to="{path:'dynamic'}">
+          <div class="find-img">
+            <img src="./../../static/images/findImg.png" />
+          </div>
+          <div class="findText">
+            线下活动
+          </div>
+        </router-link>
       </li>
       <li class="find-Li">
         <div class="find-img">
