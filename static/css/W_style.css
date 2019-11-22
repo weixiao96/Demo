@@ -642,6 +642,26 @@ input{
 .conditionBut button.cancel{
   color:#999
 }
+.like{
+  position: absolute;
+  top: .3rem;
+  right: .2rem;
+  color: #fff;
+  display: inline-block;
+  background: #cdb181;
+  border-radius: .5rem;
+  height: .5rem;
+  line-height: .5rem;
+  padding: 0 .15rem;
+  text-align: center;
+}
+.like img{
+  width: .4rem;
+  height: .4rem;
+  margin-top: -.05rem;
+  display: inline-block;
+  vertical-align: middle;
+}
 .infoBg{
   width: 100%;
   height: auto;
@@ -948,6 +968,7 @@ input{
 .charInterface{
   background: #f0f3f5;
   padding: .2rem;
+  overflow-y:auto;
 }
 .SendOutBox{
  height: .8rem;
@@ -1041,4 +1062,29 @@ input{
     content: "";
     clear: both;
     display: table;
+}
+.operation li{
+  height: .8rem;
+  line-height: .8rem;
+  text-align: center;
+  font-size: .24rem;
+  color: #000000;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F0F3F5;
+}
+.operation li:last-child{
+  margin-top: .15rem;
+}
+.contactIconf  .yd-btn-danger:not(.yd-btn-loading){
+  background: transparent;
+}
+.contactIconf .yd-btn-block{
+  margin-top: 0;
+  height: auto;
+}
+.operationBox .yd-popup-content{
+  border-radius: 0;
+}
+.operationBox .yd-popup{
+  background: transparent !important;
 }

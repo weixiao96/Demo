@@ -1,6 +1,10 @@
 <template>
   <div>
     <div class="DetaisBox" v-if="show">
+      <div class="like">
+        <img src="../../static/images/like.png" />
+        {{LikeNumber}}
+      </div>
       <div class="infoBg">
         <img src="./../../static/images/DetailsBg.png" />
       </div>
@@ -179,11 +183,12 @@
         <span @click="show = !show" class="contactIconf">
           <img src="./../../static/images/detailsIconf1.png" />
         </span>
-        <span class="contactIconf">
-          <img src="./../../static/images/detailsIconf.png" />
+        <span class="contactIconf" @click="Fabulous">
+          <!-- <img :src="FabulousImg" /> -->
+          <img :src="FabulousImg" />
         </span>
         <span class="contactIconf fr">
-          <img src="./../../static/images/detailsIconf2.png" />
+          <yd-button size="large" type="danger" @click.native="show2 = true"><img src="./../../static/images/detailsIconf2.png" /></yd-button>
         </span>
       </div>
     </div>
@@ -206,8 +211,8 @@
             <p class="region">mirobadev@gmail.com</p>
           </div>
         </div>
-        <div class="charInterface" :style="{height:charInterfaceH + 'px'}">
-          <div   v-for="(obj,index) in Message">
+        <div class="charInterface" id="data-list-content" :style="{height:charInterfaceH + 'px'}">
+          <div v-for="(obj,index) in Message">
             <div v-if="obj.sign=='ni'" class="reply">
               <div class="time">{{obj.time}}</div>
               <div class="msg">
@@ -232,21 +237,39 @@
           <span class="charPhoto">
             <img src="../../static/images/char_Photo.png" />
           </span>
-          <input type="text" placeholder="你想说什么" v-model="SendOutContent" class="SendOut_input" />
+          <input type="text" placeholder="你想说什么" v-model="SendOutContent" class="SendOut_input" @keyup.enter="SendOut_but"/>
           <button @click="SendOut_but" class="SendOut_but">发送</button>
         </div>
       </div>
     </transition>
+    <!-- 右侧弹出 -->
+    <yd-popup class="operationBox" v-model="show2" position="bottom">
+        <ul class="operation">
+          <li>
+             举报
+          </li>
+          <li>
+             拉黑
+          </li>
+          <li>
+             取消
+          </li>
+        </ul>
+    </yd-popup>
   </div>
 </template>
 <script>
   export default {
     data() {
       return {
+        show2: false,
         show: true,
-        fullHeight: document.documentElement.clientHeight,
+        fullHeight:'',
         infoHeight: '',
         charInterfaceH: '',
+        LikeNumber:'1059',
+        state:false,
+        FabulousImg:require('@/../static/images/detailsIconf.png'),
         list: [{
             id: '1',
             src: './../../static/images/img.png',
@@ -268,13 +291,13 @@
             id:1,
             sign:'ni',
             content:'你好',
-            time:'11/21 14:59',
+            time:'2019-11-22 9:54:36',
           },
           {
             id:2,
             sign:'wo',
             content:'你好ya',
-            time:'11/21 14:59',
+            time:'2019-11-22 10:34:36',
           }
         ],
         SendOutContent:''
@@ -284,10 +307,12 @@
 
     },
     mounted() { //在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。
+
     },
     methods: {
       beforeEnter: function(el) {
         let _this = this
+        this.fullHeight = _this.common.data.fullHeight
         setTimeout(function() {
           _this.infoHeight = _this.$refs.HeadpPortraitBg.offsetHeight; //聊天界面高度
           _this.SendOutHeight = _this.$refs.SendOut.offsetHeight; //发送操作高度
@@ -295,6 +320,9 @@
         }, 100);
       },
       SendOut_but:function(){
+        // 获取聊天界面的id
+        var div = document.getElementById('data-list-content')
+        div.scrollTop = div.scrollHeight
         if(this.SendOutContent == ''){
           this.$dialog.toast({
               mes: '请输入内容',
@@ -305,10 +333,37 @@
           let data = {
             sign:'wo',
             content:this.SendOutContent,
-            time:'11/21 14:59'
+            time:this.common.getNowFormatDate()
           }
           this.Message.push(data)
           this.SendOutContent = ''
+        }
+        //$nextTick方法 是在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后使用 。
+        // 始终让滚动条保持在底部
+        this.$nextTick(() => {
+          var div = document.getElementById('data-list-content')
+          div.scrollTop = div.scrollHeight
+        })
+      },
+      Fabulous:function(){
+        if(this.state){
+          this.LikeNumber = Number(this.LikeNumber) - 1
+          this.FabulousImg = require('@/../static/images/detailsIconf.png')
+          this.state = false
+          this.$dialog.toast({
+              mes: '取消成功',
+              icon: 'success',
+              timeout: 1000
+          });
+        }else{
+          this.LikeNumber = Number(this.LikeNumber) + 1
+          this.FabulousImg = require('@/../static/images/detailsIconfActive.png')
+          this.state = true
+          this.$dialog.toast({
+              mes: '关注成功',
+              icon: 'success',
+              timeout: 1000
+          });
         }
       }
     }
