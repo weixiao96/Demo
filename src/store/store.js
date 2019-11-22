@@ -5,9 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    LoginState: 2
+    LoginState: 0
   },
-
   mutations: {
     increment (state,value) {
       console.log(state,value)
