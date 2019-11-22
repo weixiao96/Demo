@@ -181,14 +181,14 @@
       <!-- 联系 漂浮 -->
       <div class="contact">
         <span @click="show = !show" class="contactIconf">
-          <img src="./../../static/images/detailsIconf1.png" />
+          <img src="./../../static/images/DetailsIconf1.png" />
         </span>
         <span class="contactIconf" @click="Fabulous">
           <!-- <img :src="FabulousImg" /> -->
           <img :src="FabulousImg" />
         </span>
         <span class="contactIconf fr">
-          <yd-button size="large" type="danger" @click.native="show2 = true"><img src="./../../static/images/detailsIconf2.png" /></yd-button>
+          <yd-button size="large" type="danger" @click.native="show2 = true"><img src="./../../static/images/DetailsIconf2.png" /></yd-button>
         </span>
       </div>
     </div>
@@ -269,7 +269,7 @@
         charInterfaceH: '',
         LikeNumber:'1059',
         state:false,
-        FabulousImg:require('@/../static/images/detailsIconf.png'),
+        FabulousImg:require('@/../static/images/DetailsIconf.png'),
         list: [{
             id: '1',
             src: './../../static/images/img.png',

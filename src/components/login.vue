@@ -1,7 +1,7 @@
 <template>
     <div class="Login_bg" :style = "{width: fullWidth + 'px',height: fullHeight + 'px' }">
       <div class="Logo">
-        <img src="../../static/images/Logo.png" />
+        <img src="../../static/images/logo.png" />
       </div>
       <div class="Title_p">全球海归真实交友平台</div>
       <div class="Button-Box">
