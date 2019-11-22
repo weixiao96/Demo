@@ -348,7 +348,7 @@
       Fabulous:function(){
         if(this.state){
           this.LikeNumber = Number(this.LikeNumber) - 1
-          this.FabulousImg = require('@/../static/images/detailsIconf.png')
+          this.FabulousImg = require('@/../static/images/DetailsIconf.png')
           this.state = false
           this.$dialog.toast({
               mes: '取消成功',
