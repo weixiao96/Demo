@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-    LoginState: 0
+    LoginState: 2
   },
   mutations: {
     increment (state,value) {

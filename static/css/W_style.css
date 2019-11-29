@@ -1088,3 +1088,274 @@ input{
 .operationBox .yd-popup{
   background: transparent !important;
 }
+.ActiveUl,.ActivityHistoryUl{
+  padding: .2rem;
+  background: #f0f3f5;
+}
+.ActiveLi,.ActivityHistoryli{
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: .2rem;
+}
+.ActivityHistoryli{
+  position: relative;
+}
+.ActiveTextBox{
+  position: relative;
+  background: #fff;
+  padding: .2rem .3rem;
+  padding-right: 2rem;
+}
+.ActiveTextBox p{
+  font-size: .3rem;
+  color: #454545;
+  height: .6rem;
+  line-height: .6rem;
+  overflow: hidden;/*超出部分隐藏*/
+  text-overflow:ellipsis;/* 超出部分显示省略号 */
+  white-space: nowrap;/*规定段落中的文本不进行换行 */
+}
+.activityIconf{
+  display: inline-block;
+  width: .3rem;
+  height: .3rem;
+  line-height: .25rem;
+  font-size: 0;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.ActivePrice{
+  position: absolute;
+  right: .3rem;
+  top: .3rem;
+  width: 2rem;
+  height: .8rem;
+  line-height: .8rem;
+  text-align: right;
+  font-size: .48rem;
+  color: #cdb181;
+}
+.ActivePrice label{
+  font-size: .3rem;
+}
+.ActivePrice span{
+  font-size: .3rem;
+  color: #999999;
+}
+.ActivityHistoryText{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1rem;
+  line-height: 1.1rem;
+  font-size: .4rem;
+  color: #ffffff;
+  width: 100%;
+  background: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+  padding: 0 .3rem;
+}
+.activeDetailBg{
+
+}
+.activeMain{
+  position: relative;
+  top: -.4rem;
+  background: #fff;
+  border-top-left-radius:.4rem;
+  border-top-right-radius:.4rem;
+  min-height: 2rem;
+  padding: .3rem;
+}
+.activeTitle{
+  height: .7rem;
+  line-height: .7rem;
+  text-align: left;
+  color: #333333;
+  font-size: .34rem;
+  font-weight: normal;
+}
+.ProgressBarBox{
+  position: relative;
+  height: .26rem;
+  line-height: .26rem;
+  overflow: hidden;
+}
+.ProgressBarMin{
+  position: relative;
+  height: .2rem;
+  line-height: .2rem;
+  background: #f0f0f0;
+  border-radius: .2rem;
+  overflow: hidden;
+  margin-top: .03rem;
+}
+.ProgressBar{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: .2rem;
+  line-height: .2rem;
+  background: #f3b678;
+  width: 0%;
+  transition: width 1s;
+}
+.ProgressBarText{
+  height: .8rem;
+  line-height: .8rem;
+  overflow: hidden;
+}
+.left{
+  height: .8rem;
+  line-height: .8rem;
+  float: left;
+}
+.right{
+  height: .8rem;
+  line-height: .8rem;
+  float: right;
+}
+.ProgressBarImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: .12rem;
+  height: .26rem;
+  transition: left 1s;
+}
+.Enrolment>span{
+  font-size: .34rem;
+  color: #CEA972;
+}
+.activeDetailsLi{
+  font-size: 0;
+  height: 1rem;
+  line-height: 1rem;
+  border-bottom: 1px solid #ebebeb;
+}
+.activeDetailsLi:last-child{
+  border: none;
+}
+.activeDetailsLilabel{
+  font-size: .3rem;
+  display: inline-block;
+  width: 2rem;
+  height: 1rem;
+  color: #333333;
+  line-height: 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+.activeDetailsLilabel>i{
+  display:inline-block;
+  width: .3rem;
+  vertical-align: middle;
+}
+.ActiveLiMain{
+  position: relative;
+  display: inline-block;
+  color: #666666;
+  width: calc(100% - 2rem);
+  font-size: .28rem;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.ActiveLiMain .ActiveLiMainColor{
+  color: #cfa670;
+}
+.activeDetailsLi.height{
+  height: auto;
+}
+.HeadPortraits{
+  display: inline-block;
+  width: .6rem;
+  height: .6rem;
+  vertical-align: middle;
+   margin-top: -3px;
+   margin-left: .1rem;
+}
+.HeadPortraits img{
+  width: 100%;
+  height: 100%;
+}
+.HeadPortraitsMask{
+  width: 1rem;
+  height: 1rem;
+  line-height: rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: -webkit-linear-gradient(left,rgba(0,0,0,0),rgba(255,255,255,255));
+}
+.HeadPortraitsMask img{
+  width: .15rem;
+  height: .28rem;
+}
+.ActiveDetailsText{
+  text-align: center;
+}
+.ActiveDetailsTextTitle{
+  font-size: .4rem;
+  color: #333333;
+  line-height: .8rem;
+}
+.ActiveDetailsTextP{
+  font-size: .3rem;
+  color: #333333;
+  line-height: .6rem;
+}
+.ActiveDetailsImg{
+  display: block;
+  width: 100%;
+  margin: .2rem 0;
+}
+.ActiveDetailsInfoP{
+  color: #333333;
+  height: .5rem;
+  line-height: .5rem;
+  font-size: .28rem;
+  text-align: center;
+}
+.ActiveDetailsInfo{
+  min-height: 3rem;
+  width: 100%;
+  margin: 20px 0;
+  padding: .3rem 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  overflow: hidden;
+}
+.ActiveDetailsInfoH1{
+  text-align: center;
+}
+.ActiveDetailsInfoH1 img{
+  height: .55rem;
+}
+.code{
+  width: 50%;
+  margin: .2rem auto;
+}
+.code img{
+  display: block;
+}
+.codeP{
+  text-align: center;
+  font-size: .24rem;
+  color: #999999;
+  height: .3rem;
+  line-height: .3rem;
+}
+.Submission{
+  display:block;
+  width: 100%;
+  height: .9rem;
+  background: #cdb181;
+  color: #fff;
+  font-weight: bold;
+  font-size: .3rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

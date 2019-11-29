@@ -11,6 +11,7 @@ import news from '@/components/news'
 import Gender from '@/components/Gender'
 import find from '@/components/find'
 import dynamic from '@/components/dynamic'
+import activeDetail from '@/components/activeDetail'
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -63,6 +64,10 @@ export default new Router({
       path: '/dynamic',
       name: 'dynamic',
       component: dynamic
+    },{
+      path: '/activeDetail',
+      name: 'activeDetail',
+      component: activeDetail
     }
 
   ]

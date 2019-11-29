@@ -182,6 +182,7 @@
       <div class="contact">
         <span @click="show = !show" class="contactIconf">
           <img src="./../../static/images/DetailsIconf1.png" />
+          <img src="" />
         </span>
         <span class="contactIconf" @click="Fabulous">
           <!-- <img :src="FabulousImg" /> -->
@@ -204,6 +205,7 @@
             <img src="../../static/images/DetailsBg.png" />
           </div>
           <div class="CharInfo">
+            <!--  -->
             <div class='HeadPortrait'>
               <img src="../../static/images/DetailsBg.png" />
             </div>
