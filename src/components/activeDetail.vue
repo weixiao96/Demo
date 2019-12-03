@@ -69,9 +69,9 @@
             <span class="HeadPortraits" v-for="(value,index) in HeadPortraitList" :key="index">
               <img :src="value" />
             </span>
-             <yd-button  class="HeadPortraitsMask" @click.native="openHeadPortraits = true" size="large" type="hollow">
+             <div  class="HeadPortraitsMask">
                <img src="../../static/images/arrow.png" />
-             </yd-button>
+             </div>
           </div>
         </li>
         <li class="activeDetailsLi  height">
@@ -113,10 +113,6 @@
     <button class="Submission">
       立即报名
     </button>
-    <!--  -->
-    <yd-popup v-model="openHeadPortraits" position="center">
-        <yd-button type="danger" style="margin: 30px;" @click.native="show4 = false">Close Right Popup</yd-button>
-    </yd-popup>
   </div>
 </template>
 <script>
